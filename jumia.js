@@ -7,7 +7,7 @@ function initialzeQueries(urlWithoutQueries, SearchItem) {
 }
 url = initialzeQueries(
   url,
-  /*put here what you wanna search about:*/ "iphone 12"
+  /*put here what you wanna search about:*/ "samsung"
 );
 async function scrape(url) {
   const browser = await puppeteer.launch();
