@@ -24,11 +24,13 @@ async function scrape(url) {
       )?.innerHTML;
       const title = article.querySelector("div.mx-2 h2")?.innerText;
       const infosHtml = article.querySelector("div.mx-2")?.innerHTML;
+      const price = article.querySelector("span.primary--text.price.mb-1 span span")?.innerText;
       return {
         articleHtml,
         nextChieldTest,
         title,
         infosHtml,
+        price,
       };
     });
   });
