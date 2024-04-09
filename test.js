@@ -15,8 +15,10 @@ async function scrape(url) {
   await page.goto(url, { waitUntil: "networkidle2" }); // wait until page load
 
   const allArticles = await page.evaluate(() => {
-      const articles = document.querySelectorAll("div.col-sm-6.col-md-4.col-lg-3.col-12");
-      console.log("articles content is :",articles);
+    const articles = document.querySelectorAll(
+      "div.col-sm-6.col-md-4.col-lg-3.col-12"
+    );
+    console.log("articles content is :", articles);
     return Array.from(articles).map((article) => {
       const articleHtml = article?.innerHTML;
       const nextChieldTest = article.querySelector(
